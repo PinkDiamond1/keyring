@@ -45,6 +45,7 @@ jobs:
     - name: run tests
       run: |
         tox -- --junit-xml=test-results.xml
+      env:
         TOX_TESTENV_PASSENV: Windows_NT
 
     - name: Upload test results
