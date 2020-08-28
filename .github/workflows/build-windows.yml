@@ -45,7 +45,7 @@ jobs:
     - name: run tests
       run: |
         tox -- --junit-xml=test-results.xml
-#        TOX_TESTENV_PASSENV: AGENT_OS
+        TOX_TESTENV_PASSENV: Windows_NT
 
     - name: Upload test results
       uses: actions/upload-artifact@v2
