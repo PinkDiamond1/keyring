@@ -109,8 +109,7 @@ class DBusKeyring(KeyringBackend):
         return True
 
     def get_password(self, service, username):
-        """Get password of the username for the service
-        """
+        """Get password of the username for the service"""
         if not self.connected(service):
             # the user pressed "cancel" when prompted to unlock their keyring.
             raise KeyringLocked("Failed to unlock the keyring!")
@@ -140,16 +139,14 @@ class DBusKeyring(KeyringBackend):
             return SimpleCredential(str(username), str(password))
 
     def set_password(self, service, username, password):
-        """Set password for the username of the service
-        """
+        """Set password for the username of the service"""
         if not self.connected(service):
             # the user pressed "cancel" when prompted to unlock their keyring.
             raise PasswordSetError("Cancelled by user")
         self.iface.writePassword(self.handle, service, username, password, self.appid)
 
     def delete_password(self, service, username):
-        """Delete the password for the username of the service.
-        """
+        """Delete the password for the username of the service."""
         if not self.connected(service):
             # the user pressed "cancel" when prompted to unlock their keyring.
             raise PasswordDeleteError("Cancelled by user")
