@@ -51,5 +51,5 @@ jobs:
     - name: Upload test results
       uses: actions/upload-artifact@v2
       with:
-        name: wheels
+        name: test-results
         path: test-results.xml
